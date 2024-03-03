@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-layout">
     <nav class="mx-auto flex justify-center">
       <router-link to="/">Home </router-link>
       <router-link to="/tasks">Tasks </router-link>

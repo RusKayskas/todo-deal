@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import TheDefaultLayoutVue from '@/layouts/TheDefaultLayout.vue'
-import TheNewLayoutVue from '@/layouts/TheNewLayout.vue'
+import TheDefaultLayout from '@/layouts/TheDefaultLayout.vue'
+import TheHomeLayout from '@/layouts/TheHomeLayout.vue'
 import HomeView from '@/views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home', // Добавлено имя для родительского маршрута
-    component: TheNewLayoutVue,
+    component: TheHomeLayout,
     children: [
       {
         path: '/',
@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/tasks',
     name: 'tasks',
-    component: TheDefaultLayoutVue,
+    component: TheDefaultLayout,
     children: [
       {
         path: '/tasks',
