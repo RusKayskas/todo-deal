@@ -1,20 +1,33 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import TheDefaultLayoutVue from '@/layouts/TheDefaultLayout.vue'
+import TheNewLayoutVue from '@/layouts/TheNewLayout.vue'
+import HomeView from '@/views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'home', // Добавлено имя для родительского маршрута
+    component: TheNewLayoutVue,
+    children: [
+      {
+        path: '/',
+        name: 'home', // Пустой путь для главной страницы
+        component: HomeView,
+      },
+    ],
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/tasks',
+    name: 'tasks',
+    component: TheDefaultLayoutVue,
+    children: [
+      {
+        path: '/tasks',
+        name: 'tasks',
+        component: () => import('../views/TasksView.vue')
+      }
+    ]
+  },
 ]
 
 const router = createRouter({
