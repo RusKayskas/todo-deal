@@ -22,6 +22,7 @@
     object-fit: contain;
   }
   .layout {
+    min-height: 100vh;
     &--grid {
       display: grid;
       grid-template-columns: 1fr 6fr;

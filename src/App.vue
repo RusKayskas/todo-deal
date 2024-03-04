@@ -9,7 +9,11 @@ nav {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #5b7fa3;
+    transition: linear 0.2s;
+    &:hover {
+      color: #9d3056;
+    }
 
     &.router-link-exact-active {
       color: #42b983;
