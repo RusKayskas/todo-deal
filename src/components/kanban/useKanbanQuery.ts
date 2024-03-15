@@ -25,7 +25,7 @@ export function useKanbanQuery() {
             $createdAt: task.$createAt,
             id: task.$id,
             name: task.name,
-            details: task.detail,
+            details: task.details,
             status: column.name
           })
         }

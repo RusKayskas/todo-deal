@@ -18,6 +18,6 @@ export enum EnumStatus {
 export interface ITask extends IBaseField {
   comments: IComment[],
   name: string,
-  detail: string,
+  details: string,
   status: EnumStatus
 }
